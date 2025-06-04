@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Визитка - Я</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/progressbar.css" />
+</head>
+<body>
+  <div class="card">
+
+    <div class="controls">
+        <label for="mode-select">Режим анимации:</label>
+        <select id="mode-select">
+          <option value="gradient-fill">Gradient Fill</option>
+          <option value="solid-color-fill">Solid Color Fill</option>
+          <option value="default">Default</option>
+        </select>
+        <br>
+        <button id="restart-btn">Перезапустить анимацию</button>
+      </div>
+
+    <h1>Кирилл <em>|</em> Krist</h1>
+    <p class="tagline">Бэкенд, логика и нестандартные задачи - моё всё</p>
+
+    <section class="skills">
+        <h2>Навыки</h2>
+        <div class="skill">
+          <span><img src="assets/code.svg" alt="Code" class="code-icon" /> Kotlin для Android</span>
+          <div class="progress gradient-fill" data-percent="80">
+            <div class="fill"></div>
+          </div>
+        </div>
+        <div class="skill">
+            <span><img src="assets/android.svg" alt="Android" class="android-icon" /> Андроид разработка</span>
+            <div class="progress gradient-fill" data-percent="60">
+                <div class="fill"></div>
+              </div>
+          </div>
+        <div class="skill">
+          <span><img src="assets/lock.svg" alt="Lock" class="lock-icon" /> Реверс-инжиниринг и этический хакинг</span>
+          <div class="progress gradient-fill" data-percent="40">
+            <div class="fill"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <span><img src="assets/school.svg" alt="School" class="school-icon" /> Обучаемость</span>
+          <div class="progress gradient-fill" data-percent="90">
+            <div class="fill"></div>
+          </div>
+        </div>
+        
+      </section>
+
+    <a class="button" href="example.html">Упрощённый пример моего проекта</a>
+  </div>
+
+  <footer>
+    <p>© 2025 Krist dev. | Лишь учусь, но делаю красиво</p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+
+
+</body>
+</html>
