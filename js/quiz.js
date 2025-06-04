@@ -56,7 +56,7 @@ function handleAnswer(selectedIndex, optionElement) {
 
   canAnswer = false;
 
-  const correctIndex = quizData[currentIndex].correctAnswerIndex;
+  const correctIndex = quizData[currentIndex].correctIndex;
 
   // Подсветка правильного и выбранного ответов
   const options = document.querySelectorAll('.option');
@@ -84,23 +84,23 @@ function handleAnswer(selectedIndex, optionElement) {
 }
 
 function finishQuiz() {
-    const container = document.getElementById('quizContainer');
-    container.innerHTML = `
+  const container = document.getElementById('quizContainer');
+  container.innerHTML = `
       <div id="result">Тест завершён! Ваш результат: ${score} из ${quizData.length}</div>
       <div class="finish-buttons">
         <button id="restartButton" class="button">Пройти снова</button>
         <button id="returnButton" class="button">Вернуться</button>
       </div>
     `;
-  
-    document.getElementById('restartButton').onclick = () => {
-      currentIndex = 0;
-      score = 0;
-      showQuestion();
-    };
-  
-    document.getElementById('returnButton').onclick = () => {
-      window.location.href = 'example.html';
-    };
-  }
-  
+
+  document.getElementById('restartButton').onclick = () => {
+    currentIndex = 0;
+    score = 0;
+    showQuestion();
+  };
+
+  document.getElementById('returnButton').onclick = () => {
+    window.location.href = 'example.html';
+  };
+}
+

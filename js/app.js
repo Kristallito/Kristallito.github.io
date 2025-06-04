@@ -1,3 +1,8 @@
+import {
+  parseUniqueQuestions,
+  prepareQuestions
+} from './parser.js';
+
 const dropzone = document.getElementById('dropzone');
 const fileInput = document.getElementById('fileInput');
 const output = document.getElementById('output');
@@ -84,36 +89,4 @@ function readFile(file) {
   };
 
   reader.readAsText(file);
-}
-
-// Функция prepareQuestions из Kotlin, адаптированная на JS
-function prepareQuestions(data) {
-    const { questions, answers } = data;
-  
-    const questionPairs = questions.map((q, i) => [q, answers[i]]);
-  
-    shuffleArray(questionPairs);
-  
-    return questionPairs.map(([question, answerList]) => {
-      const shuffledAnswers = [...answerList];
-      const correctAnswer = shuffledAnswers[0];
-  
-      shuffleArray(shuffledAnswers);
-  
-      const newCorrectIndex = shuffledAnswers.indexOf(correctAnswer);
-  
-      return {
-        question,
-        answers: shuffledAnswers,
-        correctAnswerIndex: newCorrectIndex // <- вот так должно быть
-      };
-    });
-  }
-  
-
-function shuffleArray(arr) {
-  for (let i = arr.length -1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i+1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
 }
