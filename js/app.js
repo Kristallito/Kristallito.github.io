@@ -8,6 +8,7 @@ const fileInput = document.getElementById('fileInput');
 const output = document.getElementById('output');
 const info = document.getElementById('info');
 const randomBtn = document.getElementById('randomBtn');
+const loadBasicBtn = document.getElementById('loadPresetBtn');
 
 let loadedData = null; // Тут вопросы и ответы
 
@@ -60,6 +61,22 @@ randomBtn.addEventListener('click', () => {
   localStorage.setItem('quizData', JSON.stringify(prepared));
   window.location.href = 'test.html';
 });
+
+loadBasicBtn.addEventListener('click', () => {
+  fetch('assets/preset_test.txt')
+    .then(response => {
+      if (!response.ok) throw new Error('Ошибка загрузки');
+      return response.blob();
+    })
+    .then(blob => {
+      const file = new File([blob], 'preset_test.txt', { type: 'text/plain' });
+      readFile(file);
+    })
+    .catch(error => {
+      output.textContent = `Ошибка: ${error.message}`;
+    });
+});
+
 
 function readFile(file) {
   if (!file.type.match('text.*')) {

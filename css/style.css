@@ -284,6 +284,27 @@
     transform: scale(1.05);
     
   }
+  #loadPresetBtn {
+    display: none;
+    margin: 20px auto;
+    padding: 12px 28px;
+    background: #00bcd4;
+    color: #000;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 0px 10px rgba(0, 188, 212, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    max-width: 200px;
+    text-align: center;
+  }
+  
+  #loadPresetBtn:hover {
+    background: #0097a7;
+    transform: scale(1.05);
+  }
   
   #fileInput {
     display: none;
